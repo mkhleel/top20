@@ -16,8 +16,6 @@ class CreateSuppliersTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name')->nullable();
-            $table->integer('Phone')->nullable();
-            $table->string('address')->nullable();
         });
     }
 

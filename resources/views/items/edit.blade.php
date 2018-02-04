@@ -5,13 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Item #{{ $item->id }}</div>
                     <div class="panel-body">
-                        <a href="{{ url('/items') }}" title="Back">
-                            <button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-                                Back
-                            </button>
-                        </a>
                         <br/>
                         <br/>
 
@@ -32,7 +26,9 @@
 
                         @include ('items.form', ['submitButtonText' => 'Update'])
 
+
                         {!! Form::close() !!}
+
 
                     </div>
                 </div>

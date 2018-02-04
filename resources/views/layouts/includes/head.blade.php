@@ -21,6 +21,6 @@
     <link href="{{ url('css/animate.min.css') }}" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
-    {{--    <link rel="stylesheet" href="{{ url('/css/font-awesome.min.css') }}">--}}
+    <link rel="stylesheet" href="{{ url('/css/font-awesome.min.css') }}">
 
 </head>

@@ -30,7 +30,6 @@ class ItemsController extends Controller
                 ->orWhere('name', 'LIKE', "%$keyword%")
                 ->orWhere('description', 'LIKE', "%$keyword%")
                 ->orWhere('supplier_id', 'LIKE', "%$keyword%")
-                ->orWhere('category_id', 'LIKE', "%$keyword%")
                 ->orWhere('price', 'LIKE', "%$keyword%")
                 ->orWhere('cost', 'LIKE', "%$keyword%")
                 ->orWhere('qty', 'LIKE', "%$keyword%")
@@ -66,8 +65,7 @@ class ItemsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'supplier_id' => 'required',
-            'category_id' => 'required'
+            'supplier_id' => 'required'
         ]);
         $requestData = $request->all();
 
@@ -116,8 +114,7 @@ class ItemsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'supplier_id' => 'required',
-            'category_id' => 'required'
+            'supplier_id' => 'required'
         ]);
         $requestData = $request->all();
 

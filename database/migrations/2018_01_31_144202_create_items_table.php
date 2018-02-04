@@ -17,7 +17,6 @@ class CreateItemsTable extends Migration
             $table->timestamps();
             $table->string('code')->nullable();
             $table->string('name')->nullable();
-            $table->string('description')->nullable();
             $table->integer('supplier_id')->unsigned();
             $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
             $table->integer('retail')->nullable();
@@ -26,6 +25,8 @@ class CreateItemsTable extends Migration
             $table->integer('hyper')->nullable();
             $table->integer('cost')->nullable();
             $table->integer('qty')->nullable();
+            $table->boolean('single');
+            $table->integer('num')->nullable();;
         });
     }
 

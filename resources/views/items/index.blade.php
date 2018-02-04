@@ -13,7 +13,16 @@
                 $(document).ready(function () {
                     $("#grid").kendoGrid({
 
-                        toolbar: ["excel"],
+                        toolbar: [
+                            {
+                                name: "Add",
+                                template: '<a class="k-button" href="{{ url('items/create') }}">إضافة صنف</a>',
+                            },
+                            {
+                                name: "excel",
+                                text: "تصدير اكسل"
+                            }
+                        ],
                         excel: {
                             allPages: true
                         },
@@ -23,7 +32,11 @@
                                 read: {
                                     url: "{{ url('data/items') }}", //url: "api/Products",
                                     dataType: "json"
-                                }
+                                },
+                                destroy: {
+                                    url: "{{ url('/items/delete') }}",
+                                    dataType: "json"
+                                },
                             },
                             pageSize: 20
                         },
@@ -36,11 +49,46 @@
                         },
 
                         columns: [{
-                            field: "code"
+                            field: "id",
+                            title: "#",
+                            width: 30
+
                         }, {
-                            field: "name"
+                            field: "name",
+                            title: "إسم الصنف",
+                            width: 150
                         }, {
-                            field: "id"
+                            field: "qty",
+                            title: "الكمية",
+                            width: 150
+                        }, {
+                            field: "code",
+                            title: "كود الصنف",
+                            width: 100
+                        },
+                            {
+                                command: [{
+                                    text: "تعديل",
+                                    className: "k-primary",
+                                    click: function (e) {
+                                        e.preventDefault();
+                                        var tr = $(e.target).closest("tr");
+                                        var data = this.dataItem(tr);
+                                        window.location.href = "{{ url('items') }}/" + data.id + "/edit";
+                                    },
+                                    iconClass: "k-icon k-i-edit"
+                                }, {
+                                    text: "حذف",
+                                    click: function (e) {
+                                        e.preventDefault();
+                                        var tr = $(e.target).closest("tr");
+                                        var data = this.dataItem(tr);
+                                        window.location.href = "{{ url('items') }}/" + data.id + "/delete";
+                                    },
+                                    iconClass: "k-icon k-i-trash"
+                                }],
+                                title: " ",
+                                width: "180px"
                         }
                         ]
                     });

@@ -16,13 +16,17 @@ class CreateInvoicesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('code')->nullable();
-            $table->integer('supplier_id')->nullable();
-            $table->integer('item_id')->nullable();
-            $table->integer('client_id')->nullable();
-            $table->integer('car_id')->nullable();
+            $table->integer('supplier_id')->unsigned();
+            $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
+            $table->integer('item_id')->unsigned();
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+            $table->integer('client_id')->unsigned();
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->integer('car_id')->unsigned();
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+            $table->integer('price')->default(0);
             $table->integer('discount')->nullable();
-            $table->integer('qty')->nullable();
-            $table->date('date')->useCurrent();
+            $table->integer('qty')->nullable(0);
         });
     }
 

@@ -25,7 +25,7 @@ class Item extends Model
      *
      * @var array
      */
-    protected $fillable = ['code', 'name', 'description', 'supplier_id', 'category_id', 'price', 'cost', 'qty', 'stock'];
+    protected $fillable = ['code', 'name', 'supplier_id', 'retail', 'wholesale', 'vip', 'hyper', 'cost', 'qty', 'single', 'num'];
 
     public function Supplier()
     {
