@@ -12,6 +12,7 @@ class Area extends Model
      * @var string
      */
     protected $table = 'areas';
+    public $timestamps = false;
 
     /**
      * The database primary key value.
@@ -25,7 +26,7 @@ class Area extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'parent_id'];
+    protected $fillable = ['name'];
 
     public function clients()
     {

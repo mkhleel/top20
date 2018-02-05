@@ -15,7 +15,12 @@ class InvoicesController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index(Request $request)
+    public function index()
+    {
+        return view('invoices.index');
+    }
+
+    public function data(Request $request)
     {
         $keyword = $request->get('search');
         $perPage = 25;
@@ -30,12 +35,12 @@ class InvoicesController extends Controller
                 ->orWhere('discound', 'LIKE', "%$keyword%")
                 ->orWhere('qty', 'LIKE', "%$keyword%")
                 ->orWhere('date', 'LIKE', "%$keyword%")
-                ->paginate($perPage);
+                ->get();
         } else {
-            $invoices = Invoice::paginate($perPage);
+            $invoices = Invoice::get();
         }
 
-        return view('invoices.index', compact('invoices'));
+        return response()->json($invoices->toArray());
     }
 
     /**
@@ -119,6 +124,7 @@ class InvoicesController extends Controller
             'qty' => 'required'
         ]);
         $requestData = $request->all();
+
 
         $invoice = Invoice::findOrFail($id);
         $invoice->update($requestData);

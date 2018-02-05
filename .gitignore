@@ -5,8 +5,10 @@
 /vendor
 /.idea
 /.vagrant
+/desktop
 Homestead.json
 Homestead.yaml
+package-lock.json
 npm-debug.log
 yarn-error.log
 .env

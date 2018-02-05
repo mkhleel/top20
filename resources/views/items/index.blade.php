@@ -1,9 +1,7 @@
 @extends('layouts.crud')
 
 @section('content')
-
     <div class="k-content k-rtl">
-
         <div id="grid"></div>
         @push('scripts')
 
@@ -51,8 +49,12 @@
                         columns: [{
                             field: "id",
                             title: "#",
-                            width: 30
+                            width: 40
 
+                        }, {
+                            field: "code",
+                            title: "كود الصنف",
+                            width: 80
                         }, {
                             field: "name",
                             title: "إسم الصنف",
@@ -61,10 +63,6 @@
                             field: "qty",
                             title: "الكمية",
                             width: 150
-                        }, {
-                            field: "code",
-                            title: "كود الصنف",
-                            width: 100
                         },
                             {
                                 command: [{

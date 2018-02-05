@@ -1,6 +1,6 @@
 <!--   Core JS Files   -->
 <script src="{{ url('/js/jquery.min.js') }}" type="text/javascript"></script>
-{{--<script src="{{ url('/js/app.js') }}" type="text/javascript"></script>--}}
+<script src="{{ url('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!--  Charts Plugin -->
 <script src="{{ url('/js/Chart.min.js') }}"></script>
 <script src="{{ url('/js/popper.min.js') }}"></script>
@@ -16,6 +16,8 @@
     $(document).ready(function () {
         feather.replace()
     });
+
+
 </script>
 
 

@@ -45,10 +45,6 @@
                                     <th> Name</th>
                                     <td> {{ $area->name }} </td>
                                 </tr>
-                                <tr>
-                                    <th> Parent Id</th>
-                                    <td> {{ $area->parent_id }} </td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>

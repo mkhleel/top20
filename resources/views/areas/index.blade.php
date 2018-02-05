@@ -37,7 +37,6 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Parent Id</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -46,7 +45,6 @@
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->parent_id }}</td>
                                         <td>
                                             <a href="{{ url('/areas/' . $item->id) }}" title="View Area">
                                                 <button class="btn btn-info btn-xs"><i class="fa fa-eye"

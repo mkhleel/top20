@@ -22,7 +22,6 @@ class AreasController extends Controller
 
         if (!empty($keyword)) {
             $areas = Area::where('name', 'LIKE', "%$keyword%")
-                ->orWhere('parent_id', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
             $areas = Area::paginate($perPage);

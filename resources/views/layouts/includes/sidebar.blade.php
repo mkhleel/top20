@@ -6,20 +6,22 @@
                 الرئيسية <span class="sr-only">(current)</span>
             </a>
         </li>
+
         <li class="nav-item">
             <a class="nav-link" href="javascript:openWindow('/settings')">
                 <span data-feather="settings"></span>
                 الإعدادات
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:openWindow('/users')">
-                <span data-feather="users"></span>
-                الحسابات والصلاحيات
-            </a>
-        </li>
+        {{--<li class="nav-item">--}}
+        {{--<a class="nav-link" href="javascript:openWindow('/users')">--}}
+        {{--<span data-feather="users"></span>--}}
+        {{--الحسابات والصلاحيات--}}
+        {{--</a>--}}
+        {{--</li>--}}
+
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>الأقسام الرئيسية</span>
+            <span>الأقسام الأساسية</span>
             <div class="d-flex align-items-center text-muted">
                 <span data-feather="grid"></span>
             </div>
@@ -31,9 +33,21 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="javascript:openWindow('/categories')">
+            <a class="nav-link" href="javascript:openWindow('/invoices')">
+                <span data-feather="dollar-sign"></span>
+                الفواتير
+            </a>
+        </li>
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>الأقسام الرئيسية</span>
+            <div class="d-flex align-items-center text-muted">
+                <span data-feather="grid"></span>
+            </div>
+        </h6>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:openWindow('/areas')">
                 <span data-feather="shopping-cart"></span>
-                التصنيفات
+                المناطق
             </a>
         </li>
         <li class="nav-item">
@@ -51,15 +65,10 @@
         <li class="nav-item">
             <a class="nav-link" href="javascript:openWindow('/suppliers')">
                 <span data-feather="users"></span>
-                الوكلاء
+                الشركات
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:openWindow('/invoices')">
-                <span data-feather="dollar-sign"></span>
-                الفواتير
-            </a>
-        </li>
+
 
     </ul>
 
@@ -71,9 +80,9 @@
     </h6>
     <ul class="nav flex-column mb-2">
         <li class="nav-item">
-            <a class="nav-link" href="javascript:openWindow('/asd')">
+            <a class="nav-link" href="javascript:openWindow('/reports')">
                 <span data-feather="file-text"></span>
-                عرض تقارير
+                تقارير
             </a>
         </li>
     </ul>

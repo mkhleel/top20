@@ -50,7 +50,7 @@
                     visible: false,
                     width: "95%",
                     height: "80%",
-                    title: "توب 20",
+                    title: " ",
                     close: function () {
                         window.data("kendoWindow").setOptions({
                             width: "95%",

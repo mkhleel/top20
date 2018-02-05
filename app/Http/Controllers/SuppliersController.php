@@ -22,8 +22,6 @@ class SuppliersController extends Controller
 
         if (!empty($keyword)) {
             $suppliers = Supplier::where('name', 'LIKE', "%$keyword%")
-                ->orWhere('Phone', 'LIKE', "%$keyword%")
-                ->orWhere('adress', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
             $suppliers = Supplier::paginate($perPage);
@@ -53,7 +51,6 @@ class SuppliersController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'Phone' => 'required'
         ]);
         $requestData = $request->all();
 
@@ -102,10 +99,8 @@ class SuppliersController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'Phone' => 'required'
         ]);
         $requestData = $request->all();
-
         $supplier = Supplier::findOrFail($id);
         $supplier->update($requestData);
 

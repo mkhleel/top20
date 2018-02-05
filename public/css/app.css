@@ -10519,6 +10519,11 @@ a.text-dark:focus {
 
 body {
     direction: rtl;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-family: 'JsFlat', serif;
     font-size: 13px;
 }

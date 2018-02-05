@@ -24,6 +24,8 @@ class CreateInvoicesTable extends Migration
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
             $table->integer('car_id')->unsigned();
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+            $table->integer('area_id')->unsigned();
+            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
             $table->integer('price')->default(0);
             $table->integer('discount')->nullable();
             $table->integer('qty')->nullable(0);
